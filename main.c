@@ -95,12 +95,14 @@ It is on the LINE 14 TO 28 !!! */
        //use a loop to help
 
   tmp=head;
+  NodePtr ptr=tmp;
   while(tmp!=NULL){
+    ptr=ptr->next;
     printf("deleting %d\n",tmp->value);
     free(tmp);
     //do not use tmp on the right side
-    tmp=tmp->next;
-    tmp=NULL;
+
+    tmp=ptr;
   }
 
   return 0;
